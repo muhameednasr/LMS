@@ -33,12 +33,12 @@ namespace LMS
                       Category = b.Category,
                       Price = b.Price,
                       Autor = a.AuthorName,
-                      publisherId=b.PublisherId,
-                      staffId=b.StaffId,
+                      publisherId = b.PublisherId,
+                      staffId = b.StaffId,
                   }).Join(
                     context.Publishers,
-                    ba=>ba.publisherId,
-                    p=>p.PublisherId,
+                    ba => ba.publisherId,
+                    p => p.PublisherId,
                     (ba, p) => new
                     {
                         Title = ba.Title,
@@ -46,12 +46,12 @@ namespace LMS
                         Category = ba.Category,
                         Price = ba.Price,
                         Autor = ba.Autor,
-                        staffId=ba.staffId,
-                        publisherName=p.Name
+                        staffId = ba.staffId,
+                        publisherName = p.Name
                     }).Join(
                     context.Staff,
-                    b=>b.staffId,
-                    s=>s.StaffId,
+                    b => b.staffId,
+                    s => s.StaffId,
                     (b, s) => new
                     {
                         Title = b.Title,
@@ -59,11 +59,57 @@ namespace LMS
                         Category = b.Category,
                         Price = b.Price,
                         Autor = b.Autor,
-                        publisher=b.publisherName,
-                        staff=s.Name
+                        publisher = b.publisherName,
+                        staff = s.Name
                     })
                     .ToList();
+
+                comboAuthor.DataSource = context.Authors.ToList();
+                comboAuthor.DisplayMember = "AuthorName";
+                comboAuthor.ValueMember = "AuthorId";
+
+                comboPublisher.DataSource = context.Publishers.ToList();
+                comboPublisher.DisplayMember = "Name";
+                comboPublisher.ValueMember = "PublisherId";
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTitle.Text) ||
+                string.IsNullOrWhiteSpace(txtEdition.Text) ||
+                string.IsNullOrWhiteSpace(txtCategory.Text) ||
+                !int.TryParse(txtPrice.Text, out int price))
+            {
+                MessageBox.Show("Please fill in all fields correctly.");
+                return;
+            }
+
+            using (var context = new LmsContext())
+            {
+                var book = new Book()
+                {
+                    Title = txtTitle.Text,
+                    Edition = txtEdition.Text,
+                    Category = txtCategory.Text,
+                    Price = price,
+                    AuthorId = (int)comboAuthor.SelectedValue,
+                    PublisherId = (int)comboPublisher.SelectedValue,
+                    
+                };
+
+                context.Books.Add(book);
+                context.SaveChanges();
+            }
+
+            MessageBox.Show("Book added successfully!");
+            Books_Load(sender, e);
+        }
+
     }
 }
