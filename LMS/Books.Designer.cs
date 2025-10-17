@@ -71,7 +71,7 @@
             label1.ImageAlign = ContentAlignment.MiddleRight;
             label1.Location = new Point(10, 7);
             label1.Name = "label1";
-            label1.Size = new Size(911, 34);
+            label1.Size = new Size(911, 46);
             label1.TabIndex = 1;
             label1.Text = "Books";
             label1.TextAlign = ContentAlignment.MiddleCenter;

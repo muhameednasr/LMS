@@ -12,5 +12,10 @@ namespace LMS
             Books books = new Books();
             books.ShowDialog();
         }
+
+        private void btnReader_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

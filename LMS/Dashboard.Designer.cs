@@ -78,6 +78,7 @@
             btnReader.TabIndex = 2;
             btnReader.Text = "Reader";
             btnReader.UseVisualStyleBackColor = true;
+            btnReader.Click += btnReader_Click;
             // 
             // btnStaff
             // 
