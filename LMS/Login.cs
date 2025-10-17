@@ -34,7 +34,10 @@ namespace LMS
                 var user = context.Staff.Where(u => u.Name.ToLower() == name.ToLower()).Join(context.AuthenticationSystems,
                     staff => staff.LoginId,
                     auth => auth.LoginId,
-                    (s, a) => new { name = s.Name, password = a.Password }).FirstOrDefault();
+                    (s, a) => new { name = s.Name, password = a.Password , staffId=s.StaffId }).FirstOrDefault();
+
+                staticUser.user = user.name;
+                staticUser.staffId = (int)user.staffId;
 
                 if (user != null && user.password == pass)
                 {
