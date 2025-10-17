@@ -15,7 +15,8 @@ namespace LMS
 
         private void btnReader_Click(object sender, EventArgs e)
         {
-
+            ReaderForm readerForm = new ReaderForm();
+            readerForm.ShowDialog();
         }
     }
 }

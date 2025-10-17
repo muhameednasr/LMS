@@ -58,6 +58,7 @@
             btnUpdate.TabIndex = 33;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // txtPhone
             // 
@@ -142,6 +143,7 @@
             btnDelete.TabIndex = 20;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnAdd
             // 
@@ -182,6 +184,7 @@
             dgv.RowHeadersWidth = 51;
             dgv.Size = new Size(738, 422);
             dgv.TabIndex = 17;
+            dgv.CellClick += dgv_CellClick;
             // 
             // txtAddress
             // 
@@ -201,7 +204,7 @@
             label6.TabIndex = 34;
             label6.Text = "Address";
             // 
-            // Reader
+            // ReaderForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -221,7 +224,7 @@
             Controls.Add(btnAdd);
             Controls.Add(label1);
             Controls.Add(dgv);
-            Name = "Reader";
+            Name = "ReaderForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Reader";
             Load += Reader_Load;
