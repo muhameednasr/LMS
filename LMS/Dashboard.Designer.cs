@@ -41,8 +41,9 @@
             // 
             pictureBox1.Image = Properties.Resources.pexels_joshkjack_135018;
             pictureBox1.Location = new Point(3, 2);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(796, 448);
+            pictureBox1.Size = new Size(696, 336);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -54,9 +55,10 @@
             btnBooks.FlatStyle = FlatStyle.Popup;
             btnBooks.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBooks.ForeColor = SystemColors.ButtonHighlight;
-            btnBooks.Location = new Point(91, 23);
+            btnBooks.Location = new Point(117, 2);
+            btnBooks.Margin = new Padding(3, 2, 3, 2);
             btnBooks.Name = "btnBooks";
-            btnBooks.Size = new Size(100, 100);
+            btnBooks.Size = new Size(88, 75);
             btnBooks.TabIndex = 1;
             btnBooks.Text = "Books";
             btnBooks.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             btnReader.FlatStyle = FlatStyle.Popup;
             btnReader.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReader.ForeColor = SystemColors.ButtonHighlight;
-            btnReader.Location = new Point(66, 173);
+            btnReader.Location = new Point(99, 104);
+            btnReader.Margin = new Padding(3, 2, 3, 2);
             btnReader.Name = "btnReader";
-            btnReader.Size = new Size(100, 100);
+            btnReader.Size = new Size(88, 75);
             btnReader.TabIndex = 2;
             btnReader.Text = "Reader";
             btnReader.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@
             btnStaff.FlatStyle = FlatStyle.Popup;
             btnStaff.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStaff.ForeColor = SystemColors.ButtonHighlight;
-            btnStaff.Location = new Point(66, 312);
+            btnStaff.Location = new Point(117, 222);
+            btnStaff.Margin = new Padding(3, 2, 3, 2);
             btnStaff.Name = "btnStaff";
-            btnStaff.Size = new Size(100, 100);
+            btnStaff.Size = new Size(88, 75);
             btnStaff.TabIndex = 3;
             btnStaff.Text = "Staff";
             btnStaff.UseVisualStyleBackColor = true;
@@ -97,23 +101,25 @@
             btnPublisher.FlatStyle = FlatStyle.Popup;
             btnPublisher.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPublisher.ForeColor = SystemColors.ButtonHighlight;
-            btnPublisher.Location = new Point(587, 23);
+            btnPublisher.Location = new Point(471, 3);
+            btnPublisher.Margin = new Padding(3, 2, 3, 2);
             btnPublisher.Name = "btnPublisher";
-            btnPublisher.Size = new Size(139, 120);
+            btnPublisher.Size = new Size(122, 90);
             btnPublisher.TabIndex = 4;
             btnPublisher.Text = "Publisher";
             btnPublisher.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnPublisher);
             Controls.Add(btnStaff);
             Controls.Add(btnReader);
             Controls.Add(btnBooks);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Dashboard";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

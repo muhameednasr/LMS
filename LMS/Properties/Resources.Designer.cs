@@ -63,9 +63,39 @@ namespace LMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _80e23b9f_6dbf_4d6d_878e_1d8fc37101d0 {
+            get {
+                object obj = ResourceManager.GetObject("80e23b9f-6dbf-4d6d-878e-1d8fc37101d0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_folder_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-folder-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_button_label_filled_icon {
+            get {
+                object obj = ResourceManager.GetObject("login-button-label-filled-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NicePng_books_png_101646 {
+            get {
+                object obj = ResourceManager.GetObject("NicePng_books-png_101646", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
