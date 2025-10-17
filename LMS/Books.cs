@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,6 +36,7 @@ namespace LMS
                       Category = b.Category,
                       Price = b.Price,
                       Autor = a.AuthorName,
+                      AuthorId = a.AuthorId,
                       publisherId = b.PublisherId,
                       staffId = b.StaffId,
                   }).Join(
@@ -49,8 +51,10 @@ namespace LMS
                         Category = ba.Category,
                         Price = ba.Price,
                         Autor = ba.Autor,
+                        AuthorId = ba.AuthorId,
                         staffId = ba.staffId,
-                        publisherName = p.Name
+                        publisherName = p.Name,
+                        PublisherId = p.PublisherId
                     }).Join(
                     context.Staff,
                     b => b.staffId,
@@ -63,12 +67,16 @@ namespace LMS
                         Category = b.Category,
                         Price = b.Price,
                         Autor = b.Autor,
+                        AuthorId = b.AuthorId,
                         publisher = b.publisherName,
+                        PublisherId = b.PublisherId,
                         staff = s.Name
                     })
                     .ToList();
 
                 dgv.Columns["bookId"].Visible = false;
+                dgv.Columns["AuthorId"].Visible = false;
+                dgv.Columns["PublisherId"].Visible = false;
                 comboAuthor.DataSource = context.Authors.ToList();
                 comboAuthor.DisplayMember = "AuthorName";
                 comboAuthor.ValueMember = "AuthorId";
@@ -89,7 +97,7 @@ namespace LMS
             if (string.IsNullOrWhiteSpace(txtTitle.Text) ||
                 string.IsNullOrWhiteSpace(txtEdition.Text) ||
                 string.IsNullOrWhiteSpace(txtCategory.Text) ||
-                !int.TryParse(txtPrice.Text, out int price))
+                !decimal.TryParse(txtPrice.Text, out decimal price))
             {
                 MessageBox.Show("Please fill in all fields correctly.");
                 return;
@@ -138,7 +146,7 @@ namespace LMS
                 book.Title = txtTitle.Text;
                 book.Edition = txtEdition.Text;
                 book.Category = txtCategory.Text;
-                book.Price = int.Parse(txtPrice.Text);
+                book.Price = decimal.Parse(txtPrice.Text);
                 book.AuthorId = (int)comboAuthor.SelectedValue;
                 book.PublisherId = (int)comboPublisher.SelectedValue;
                 book.StaffId = staticUser.staffId;
@@ -160,15 +168,44 @@ namespace LMS
                 var row = dgv.Rows[e.RowIndex];
                 selectedBookId = Convert.ToInt32(row.Cells["bookId"].Value);
 
-               
+
                 txtTitle.Text = row.Cells["Title"].Value.ToString();
                 txtEdition.Text = row.Cells["Edition"].Value.ToString();
                 txtCategory.Text = row.Cells["Category"].Value.ToString();
                 txtPrice.Text = row.Cells["Price"].Value.ToString();
+                comboAuthor.SelectedValue = Convert.ToInt32(row.Cells["AuthorId"].Value);
+                comboPublisher.SelectedValue = Convert.ToInt32(row.Cells["PublisherId"].Value);
 
-                comboAuthor.Text = row.Cells["AuthorId"].Value.ToString();
-                comboPublisher.Text = row.Cells["PublisherId"].Value.ToString();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedBookId == 0)
+            {
+                MessageBox.Show("Please select a book to delete.");
+                return;
+            }
+
+            var confirm = MessageBox.Show("Are you sure you want to delete this book?",
+                                          "Confirm Delete",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.No)
+                return;
+
+            using (var context = new LmsContext())
+            {
+                var book = context.Books.FirstOrDefault(b => b.Isbn == selectedBookId);
+
+                context.Books.Remove(book);
+                context.SaveChanges();
+            }
+
+            MessageBox.Show("Book deleted successfully!");
+            selectedBookId = 0; 
+            Books_Load(sender, e); 
         }
 
     }

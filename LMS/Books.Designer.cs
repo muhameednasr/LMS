@@ -54,7 +54,7 @@
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv.GridColor = SystemColors.InactiveBorder;
-            dgv.Location = new Point(-1, 55);
+            dgv.Location = new Point(10, 55);
             dgv.Margin = new Padding(3, 2, 3, 2);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
@@ -100,6 +100,7 @@
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // label2
             // 
@@ -250,6 +251,7 @@
             Controls.Add(dgv);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Books";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Books";
             Load += Books_Load;
             ((System.ComponentModel.ISupportInitialize)dgv).EndInit();

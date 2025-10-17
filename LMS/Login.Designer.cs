@@ -44,9 +44,9 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = Properties.Resources.NicePng_books_png_101646;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(1, 12);
+            pictureBox1.Location = new Point(49, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(303, 185);
+            pictureBox1.Size = new Size(230, 185);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -58,9 +58,9 @@
             btnLogin.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.Image = (Image)resources.GetObject("btnLogin.Image");
             btnLogin.ImageAlign = ContentAlignment.MiddleRight;
-            btnLogin.Location = new Point(49, 433);
+            btnLogin.Location = new Point(49, 430);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(179, 45);
+            btnLogin.Size = new Size(230, 45);
             btnLogin.TabIndex = 1;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -68,16 +68,16 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(35, 265);
+            txtName.Location = new Point(49, 261);
             txtName.Name = "txtName";
-            txtName.Size = new Size(207, 23);
+            txtName.Size = new Size(230, 23);
             txtName.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(103, 232);
+            label2.Location = new Point(129, 214);
             label2.Name = "label2";
             label2.Size = new Size(71, 30);
             label2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(86, 308);
+            label1.Location = new Point(112, 301);
             label1.Name = "label1";
             label1.Size = new Size(105, 30);
             label1.TabIndex = 5;
@@ -95,17 +95,17 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(35, 341);
+            txtPassword.Location = new Point(49, 348);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(207, 23);
+            txtPassword.Size = new Size(230, 23);
             txtPassword.TabIndex = 4;
             // 
             // checkShowPass
             // 
             checkShowPass.AutoSize = true;
             checkShowPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkShowPass.Location = new Point(71, 370);
+            checkShowPass.Location = new Point(95, 388);
             checkShowPass.Name = "checkShowPass";
             checkShowPass.Size = new Size(138, 25);
             checkShowPass.TabIndex = 6;
