@@ -130,13 +130,12 @@ namespace LMS
             Authornametxt.Text = string.Empty;
             Authorcountrytxt.Text = string.Empty;
 
-            // لو عندك حقول تانية، ضيفيها هنا
-            Authornametxt.Focus();  // علشان يرجّع المؤشر على أول خانة
+            Authornametxt.Focus(); 
         }
 
         private void AuthorSearchtxt_TextChanged(object sender, EventArgs e)
         {
-            string searchValue = AuthorSearchtxt.Text.Trim().ToLower(); // علشان نخلي البحث بدون حساسية للحروف
+            string searchValue = AuthorSearchtxt.Text.Trim().ToLower();
 
             using (var ctx = new LmsContext())
             {
