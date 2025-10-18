@@ -63,7 +63,7 @@ namespace LMS
             }
 
             LoadStaff();
-            MessageBox.Show("Staff added successfully ✅");
+            MessageBox.Show("Staff added successfully ");
 
             Staffnametxt.Text = string.Empty;
             StaffloginIdtxt.Text = string.Empty;
