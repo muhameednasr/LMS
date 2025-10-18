@@ -24,7 +24,7 @@ namespace LMS
         {
             using (var context = new LmsContext())
             {
-                dgv.DataSource = context.Readers.ToList();
+                dgv.DataSource = context.Readers.Select(s => new { UserId = s.UserId, FirstName =s.FirstName,LastName=s.LastName,Name=s.Name,Email=s.Email, PhoneNo=s.PhoneNo, Address=s.Address}).ToList();
             }
         }
         private void btnAdd_Click(object sender, EventArgs e)
