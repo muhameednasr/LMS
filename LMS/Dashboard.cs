@@ -36,5 +36,18 @@ namespace LMS
             Authors_Form authorsForm = new Authors_Form();
             authorsForm.ShowDialog();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            notifyIcon1.BalloonTipText = $"Welcome ,'{staticUser.user}'";
+            notifyIcon1.BalloonTipTitle = "Library Management System";
+            notifyIcon1.ShowBalloonTip(500);
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports_Form reportsForm = new Reports_Form();
+            reportsForm.ShowDialog();
+        }
     }
 }

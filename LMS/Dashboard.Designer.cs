@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             pictureBox1 = new PictureBox();
             btnBooks = new Button();
@@ -35,6 +36,8 @@
             btnStaff = new Button();
             btnPublisher = new Button();
             btnAuthors = new Button();
+            btnReports = new Button();
+            notifyIcon1 = new NotifyIcon(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -120,20 +123,44 @@
             btnAuthors.FlatStyle = FlatStyle.Popup;
             btnAuthors.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAuthors.ForeColor = SystemColors.ButtonHighlight;
-            btnAuthors.Location = new Point(675, 158);
+            btnAuthors.Location = new Point(620, 158);
             btnAuthors.Margin = new Padding(3, 2, 3, 2);
             btnAuthors.Name = "btnAuthors";
-            btnAuthors.Size = new Size(193, 209);
+            btnAuthors.Size = new Size(248, 209);
             btnAuthors.TabIndex = 5;
             btnAuthors.Text = "Authors";
             btnAuthors.UseVisualStyleBackColor = true;
             btnAuthors.Click += btnAuthors_Click;
+            // 
+            // btnReports
+            // 
+            btnReports.BackgroundImage = (Image)resources.GetObject("btnReports.BackgroundImage");
+            btnReports.BackgroundImageLayout = ImageLayout.Stretch;
+            btnReports.FlatStyle = FlatStyle.Popup;
+            btnReports.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReports.ForeColor = SystemColors.ButtonHighlight;
+            btnReports.Location = new Point(675, 423);
+            btnReports.Margin = new Padding(3, 2, 3, 2);
+            btnReports.Name = "btnReports";
+            btnReports.Size = new Size(183, 142);
+            btnReports.TabIndex = 6;
+            btnReports.Text = "Reports";
+            btnReports.UseVisualStyleBackColor = true;
+            btnReports.Click += btnReports_Click;
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "notifyIcon1";
+            notifyIcon1.Visible = true;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(865, 564);
+            Controls.Add(btnReports);
             Controls.Add(btnAuthors);
             Controls.Add(btnPublisher);
             Controls.Add(btnStaff);
@@ -144,6 +171,7 @@
             Name = "Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -156,5 +184,7 @@
         private Button btnStaff;
         private Button btnPublisher;
         private Button btnAuthors;
+        private Button btnReports;
+        private NotifyIcon notifyIcon1;
     }
 }
