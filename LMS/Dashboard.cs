@@ -18,5 +18,11 @@ namespace LMS
             ReaderForm readerForm = new ReaderForm();
             readerForm.ShowDialog();
         }
+
+        private void btnPublisher_Click(object sender, EventArgs e)
+        {
+            PublisherForm publisherForm = new PublisherForm();
+            publisherForm.ShowDialog();
+        }
     }
 }

@@ -109,6 +109,7 @@
             btnPublisher.TabIndex = 4;
             btnPublisher.Text = "Publisher";
             btnPublisher.UseVisualStyleBackColor = true;
+            btnPublisher.Click += btnPublisher_Click;
             // 
             // Dashboard
             // 

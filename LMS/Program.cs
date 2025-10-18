@@ -12,7 +12,8 @@ namespace LMS
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Login());
-            Application.Run(new Authors_Form());
+            //Application.Run(new Authors_Form());
+            Application.Run(new PublisherForm());
         }
     }
 }
