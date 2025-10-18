@@ -24,5 +24,17 @@ namespace LMS
             PublisherForm publisherForm = new PublisherForm();
             publisherForm.ShowDialog();
         }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            Staff_Form staff = new Staff_Form();
+            staff.ShowDialog();
+        }
+
+        private void btnAuthors_Click(object sender, EventArgs e)
+        {
+            Authors_Form authorsForm = new Authors_Form();
+            authorsForm.ShowDialog();
+        }
     }
 }

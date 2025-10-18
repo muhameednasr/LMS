@@ -34,6 +34,7 @@
             btnReader = new Button();
             btnStaff = new Button();
             btnPublisher = new Button();
+            btnAuthors = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -94,6 +95,7 @@
             btnStaff.TabIndex = 3;
             btnStaff.Text = "Staff";
             btnStaff.UseVisualStyleBackColor = true;
+            btnStaff.Click += btnStaff_Click;
             // 
             // btnPublisher
             // 
@@ -111,11 +113,28 @@
             btnPublisher.UseVisualStyleBackColor = true;
             btnPublisher.Click += btnPublisher_Click;
             // 
+            // btnAuthors
+            // 
+            btnAuthors.BackgroundImage = (Image)resources.GetObject("btnAuthors.BackgroundImage");
+            btnAuthors.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAuthors.FlatStyle = FlatStyle.Popup;
+            btnAuthors.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAuthors.ForeColor = SystemColors.ButtonHighlight;
+            btnAuthors.Location = new Point(675, 158);
+            btnAuthors.Margin = new Padding(3, 2, 3, 2);
+            btnAuthors.Name = "btnAuthors";
+            btnAuthors.Size = new Size(193, 209);
+            btnAuthors.TabIndex = 5;
+            btnAuthors.Text = "Authors";
+            btnAuthors.UseVisualStyleBackColor = true;
+            btnAuthors.Click += btnAuthors_Click;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(865, 564);
+            Controls.Add(btnAuthors);
             Controls.Add(btnPublisher);
             Controls.Add(btnStaff);
             Controls.Add(btnReader);
@@ -136,5 +155,6 @@
         private Button btnReader;
         private Button btnStaff;
         private Button btnPublisher;
+        private Button btnAuthors;
     }
 }
